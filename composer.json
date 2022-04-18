@@ -1,0 +1,20 @@
+{
+    "name": "sairahcaz/php-runtime-cache-trait",
+    "description": "Simple trait for PHP runtime caching.",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Sairahcaz\\PhpRuntimeCacheTrait\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Sairahcaz",
+            "email": "zacharias.creutznacher@gmail.com"
+        }
+    ],
+    "license": "MIT",
+    "require": {
+        "php": "^7.3|^8.0"
+    }
+}

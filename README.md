@@ -5,7 +5,7 @@ This trait allows you to easily add runtime caching to your PHP classes!
 ## Installation
 
 ```bash
-composer require "Sairahcaz/php-runtime-cache-trait"
+composer require "sairahcaz/php-runtime-cache-trait"
 ```
 
 ## Usage

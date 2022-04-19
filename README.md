@@ -28,7 +28,7 @@ class Foo
         
         //important! default should be null
         $this->runtimeCache = [
-            'heavyDataCalculation_elements' => null,
+            'heavyDataCalculation_items' => null,
         ];
     }
 }
@@ -54,11 +54,13 @@ class Foo
         // Note: this needs to match the first part defined in the constructor
         $this->runtimeCacheGlobalPrefix = 'heavyDataCalculation';
         
-        //Note: the key needs to match the second part defined in the constructor
-        $elements = $this->getSafeRuntimeCache('elements', function() {
-            //here you return the data you want to cache
-            return get_sql_data("SELECT * FROM elements WHERE 1;");
-        });
+        for ($i=0; $i<1000; $i++) {
+            //Note: the key needs to match the second part defined in the constructor
+            $items = $this->getSafeRuntimeCache('items', function() {
+                //here you return the data you want to cache
+                return get_sql_data("SELECT * FROM items WHERE 1;");
+            });
+        }
     }
 }
 ```
@@ -73,13 +75,15 @@ class Foo
 {
     ...
     
-    public function heavyDataCalculation($elementId)
+    public function heavyDataCalculation($itemId)
     {
         $this->runtimeCacheGlobalPrefix = 'heavyDataCalculation';
         
-        $element = $this->getSafeRuntimeCache('elements', function() use ($elementId) {
-            return get_sql_data("SELECT * FROM elements WHERE id = $elementId;");
-        }, $elementId);//<---- Important add cache key here!!!
+        for ($i=0; $i<1000; $i++) {
+            $item = $this->getSafeRuntimeCache('items', function() use ($itemId) {
+                return get_sql_data("SELECT * FROM items WHERE id = $itemId;");
+            }, $itemId);//<---- Important add cache key here!!!
+        }
     }
 }
 ```

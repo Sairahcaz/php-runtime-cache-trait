@@ -1,6 +1,6 @@
 <?php
 
-namespace Sairahcaz;
+namespace Sairahcaz\PhpRuntimeCacheTrait;
 
 use Exception;
 

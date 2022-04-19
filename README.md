@@ -15,7 +15,7 @@ composer require "sairahcaz/php-runtime-cache-trait"
 ```php
 <?php
 
-use Sairahcaz\HasRuntimeCache;
+use Sairahcaz\PhpRuntimeCacheTrait;
 
 class Foo
 {
@@ -41,7 +41,7 @@ class Foo
 ```php
 <?php
 
-use Sairahcaz\HasRuntimeCache;
+use Sairahcaz\PhpRuntimeCacheTrait;
 
 class Foo
 {
@@ -69,7 +69,7 @@ class Foo
 ```php
 <?php
 
-use Sairahcaz\HasRuntimeCache;
+use Sairahcaz\PhpRuntimeCacheTrait;
 
 class Foo
 {
@@ -95,7 +95,7 @@ you can dis/enable it.
 ```php
 <?php
 
-use Sairahcaz\HasRuntimeCache;
+use Sairahcaz\PhpRuntimeCacheTrait;
 
 class Foo
 {

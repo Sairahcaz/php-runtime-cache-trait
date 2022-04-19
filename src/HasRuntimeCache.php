@@ -37,7 +37,7 @@ trait HasRuntimeCache
      */
     private function getSafeRuntimeCache($cacheType, callable $fallback, $cacheKey = null, $prefix = null)
     {
-        if (!$this->runtimeCacheEnabled || !config('app.runtime_cache_enable')) {
+        if (!$this->runtimeCacheEnabled) {
             return $fallback();
         }
 
